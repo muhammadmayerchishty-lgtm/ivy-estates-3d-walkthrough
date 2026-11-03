@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --font-cinzel: 'Cinzel', serif;
+  --font-inter: 'Inter', sans-serif;
+  --color-charcoal: #0B0B0C;
+  --color-ivory: #F3EBDD;
+  --color-muted-text: #A89F8D;
+  --color-gold-dark: #8A6A2B;
+  --color-gold-light: #E6C36A;
+  --color-gold-mid: #B98A2E;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #000000;
+  color: #F3EBDD;
+  overflow-x: hidden;
+}
+
+/* Headings font styling as specified: Cinzel, uppercase, letter-spacing 0.08em */
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Cinzel', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Gold Gradient Utilities */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #8A6A2B 0%, #E6C36A 50%, #B98A2E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-gradient-shine {
+  background: linear-gradient(90deg, #8A6A2B 0%, #F5E5BE 30%, #E6C36A 50%, #B98A2E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #8A6A2B 0%, #E6C36A 50%, #B98A2E 100%);
+}
+
+.border-gold-subtle {
+  border-color: rgba(230, 195, 106, 0.2);
+}
+
+.border-gold-mid {
+  border-color: rgba(230, 195, 106, 0.4);
+}
+
+.gold-glow {
+  box-shadow: 0 0 25px rgba(230, 195, 106, 0.15);
+}
+
+.gold-glow-hover:hover {
+  box-shadow: 0 0 35px rgba(230, 195, 106, 0.28);
+}
+
+/* Subtle Cinematic Vignette */
+.cinematic-vignette {
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0) 50%, rgba(0,0,0,0.55) 80%, rgba(0,0,0,0.92) 100%);
+  pointer-events: none;
+}
+
+/* Cinematic Film Grain Overlay (CSS SVG noise) */
+.cinematic-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.045'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Prevent horizontal overflow on ultra small screens (320px) */
+* {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2418;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8A6A2B;
+}
